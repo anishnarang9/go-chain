@@ -46,8 +46,8 @@ func main() {
 	chain := InitBlockChain()
 
 	chain.AddBlock("Second block technically")
-	chain.AddBlock("ermmmmm no")
-	chain.AddBlock("freshPondroad/avenue")
+	chain.AddBlock("third Block Technically")
+	chain.AddBlock(" vava to cinq on cinq back to the vava")
 
 	for _, block := range chain.blocks {
 		fmt.Printf("Previous Hash: %x\n", block.prevHash)
@@ -56,3 +56,5 @@ func main() {
 	}
 
 }
+
+/// chainhalt

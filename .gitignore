@@ -30,3 +30,6 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Local tutorial reference material
+reference/tensor-part-5-video-transcript.txt

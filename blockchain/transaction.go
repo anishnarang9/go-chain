@@ -14,16 +14,6 @@ type Transaction struct {
 	Inputs  []TxInput
 	Outputs []TxOutput
 }
-type TxOutput struct {
-	Value  int
-	PubKey string
-}
-
-type TxInput struct {
-	ID  []byte
-	Out int
-	Sig string
-}
 
 func (tx *Transaction) SetID() {
 	var encoded bytes.Buffer
@@ -91,16 +81,4 @@ func (tx *Transaction) IsCoinbase() bool {
 	return len(tx.Inputs) == 1 &&
 		len(tx.Inputs[0].ID) == 0 &&
 		tx.Inputs[0].Out == -1
-}
-
-func (in *TxInput) CanUnlock(data string) bool {
-	// if sig matches data theyre authorized to spend
-	return in.Sig == data
-	// is this output owned by X
-}
-
-func (out *TxOutput) CanBeUnlocked(data string) bool {
-	// verfies that the output was assigned to the person in the first place
-	return out.PubKey == data
-	// Is new input provide X's authorization
 }
